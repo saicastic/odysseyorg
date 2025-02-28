@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import MagneticComp from "../Magnetic/MagneticComp";
+import MagneticComp from "../magnetic/MagneticComp";
 import Link from "next/link";
 
 const ButtonOne = ({ id, title, rightIcon, leftIcon, containerClass }) => {

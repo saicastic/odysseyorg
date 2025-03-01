@@ -9,7 +9,7 @@ const aboutUsSections = [
   },
   {
     id: 2,
-    title: "About Odyssey",
+    title: "About Odyssey'25",
     images: ["/img/od_event.png"],
     alt: "About Odyssey",
     desc_one: `Odyssey is a celebration of life’s incredible journey, embracing the unique experiences, transformative moments, and boundless possibilities that define us. Our event, Odyssey: Tradition meets Innovation is a vibrant exploration of self-discovery, growth, and inspiration.`,

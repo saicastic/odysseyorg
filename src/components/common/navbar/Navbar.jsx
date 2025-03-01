@@ -10,6 +10,10 @@ import ButtonOne from "@/components/utils/buttons/ButtonOne";
 
 import navLinks from "@/data/navbar";
 import Link from "next/link";
+import "./navbar.css";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 const NavBar = () => {
   // Refs for navigation container
@@ -45,6 +49,40 @@ const NavBar = () => {
     });
   }, [isNavVisible]);
 
+  useGSAP(() => {
+    document.querySelectorAll(".navLink").forEach((el) => {
+      // mouse enter anim
+      el.addEventListener("mouseover", (e) => {
+        gsap.to(e.target.parentNode.querySelector(".navDailog"), {
+          opacity: 1,
+        });
+      });
+      // mouse leave anim
+      el.addEventListener("mouseleave", (e) => {
+        gsap.to(e.target.parentNode.querySelector(".navDailog"), {
+          opacity: 0,
+        });
+      });
+    });
+
+  
+    document.querySelectorAll(".navDailog").forEach((el) => {
+      // mouse enter anim
+     
+      el.addEventListener("mouseover", (e) => {
+         gsap.to(e.target.parentNode.parentNode,{
+          opacity:1
+         })
+      });
+      // mouse leave anim
+      el.addEventListener("mouseleave", (e) => {
+        gsap.to(e.target, {
+          opacity: 0,
+        });
+      });
+    });
+  });
+
   return (
     <div
       ref={navContainerRef}
@@ -70,11 +108,25 @@ const NavBar = () => {
           <div className="flex items-center h-full">
             <div className="hidden md:flex relative ">
               {navLinks.middle.map((item) => (
-                <div key={item.id} className="nav-hover-btn relative ">
-                  <Link href={`${item.path}`}>{item.title}</Link>
-                  <div className="absolute top-[100%] right-0 w-10 h-1 rounded-full bg-violet-400">
-                    hello
-                  </div>
+                <div key={item.id} className="  nav-hover-btn relative">
+                  <Link className="navLink" href={`${item.path}`}>
+                    {item.title}
+                  </Link>
+
+                  {item.dialog && (
+                    <div className="navDailog absolute top-[100%] bg-yellow-400 text-white rounded-[0.2rem] px-2 opacity-0">
+                      {item.dialog.map((el) => (
+                        <div
+                          key={el.id}
+                          className=" py-1 pr-4 border-b-[1px] border-b-slate-400"
+                        >
+                          <Link href={el.path} className="w-fit">
+                            {el.title}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

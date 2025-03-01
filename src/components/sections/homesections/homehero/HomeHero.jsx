@@ -6,6 +6,9 @@ import { TiLocationArrow } from "react-icons/ti";
 import VideoPreview from "./VideoPreview";
 import { ScrollTrigger } from "gsap/all";
 import SplashCursor from "@/components/utils/splashcursor/SplashCursor";
+import Image from "next/image";
+import "./homehero.css";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,6 +95,9 @@ const HomeHero = () => {
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
           ODYSS<b>E</b>Y
         </h1>
+        <div className="homePageChakra absolute w-[70%] object-cover aspect-[1/1] left-[50%] translate-x-[-50%] bottom-0 translate-y-[50%] opacity-[0.5]"> 
+          <Image src="/img/23.png" fill={true} alt="rangoli" />
+        </div>
       </div>
 
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">

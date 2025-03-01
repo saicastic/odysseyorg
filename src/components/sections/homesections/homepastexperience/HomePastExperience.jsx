@@ -1,7 +1,5 @@
-import React from "react";
+const HomePastExperiece= ()=>{
+  return (<section>Home Past Experience</section>)
+}
 
-const HomePastExperience = () => {
-  return <section>Home Past Experience</section>;
-};
-
-export default HomePastExperience;
+export default HomePastExperiece

@@ -93,7 +93,7 @@ const HomeHero = () => {
           <SplashCursor />
         </div>
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          ODYSS<b>E</b>Y
+          ODYje<b>E</b>t
         </h1>
         <div className="homePageChakra absolute w-[70%] object-cover aspect-[1/1] left-[50%] translate-x-[-50%] bottom-0 translate-y-[50%] opacity-[0.5]"> 
           <Image src="/img/23.png" fill={true} alt="rangoli" />
@@ -101,7 +101,7 @@ const HomeHero = () => {
       </div>
 
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        ODYSS<b>E</b>Y
+        ODYje<b>E</b>t
       </h1>
     </div>
   );

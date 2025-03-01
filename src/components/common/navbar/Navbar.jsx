@@ -10,6 +10,10 @@ import ButtonOne from "@/components/utils/buttons/ButtonOne";
 
 import navLinks from "@/data/navbar";
 import Link from "next/link";
+import "./navbar.css";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(useGSAP);
 
 const NavBar = () => {
   // Refs for navigation container
@@ -45,10 +49,63 @@ const NavBar = () => {
     });
   }, [isNavVisible]);
 
+  useGSAP(() => {
+    document.querySelectorAll(".navLink").forEach((el) => {
+      gsap.set(".navDailog", {
+        opacity: 0,
+        transform:
+          "translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg)",
+        transformOrigin: "50% 50% -150px !important",
+      });
+      // mouse enter anim
+      el.addEventListener("mouseover", (e) => {
+        gsap.to(e.target.parentNode.querySelector(".navDailog"), {
+          opacity: 1,
+          transform: "translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg)",
+          ease: "power2.inOut",
+        });
+      });
+      // mouse leave anim
+      el.addEventListener("mouseleave", (e) => {
+        gsap.to(e.target.parentNode.querySelector(".navDailog"), {
+          opacity: 0,
+          delay: 0.5,
+          transform:
+            "translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg)",
+          transformOrigin: "50% 50% -150px !important",
+        });
+      });
+    });
+
+    document.querySelectorAll(".navDailog").forEach((el) => {
+      // mouse enter anim
+
+      gsap.set(".navDailog", {
+        opacity: 0,
+        transform:
+          "translate3d(10px, 51px, -60px) rotateY(60deg) rotateX(-40deg)",
+      });
+
+      el.addEventListener("mouseover", (e) => {
+        gsap.to(e.target.parentNode.parentNode, {
+          opacity: 1,
+          transform: "translate3d(0, 0, 0) rotateY(0deg) rotateX(0deg)",
+          ease: "power2.inOut",
+        });
+      });
+      // mouse leave anim
+      el.addEventListener("mouseleave", (e) => {
+        gsap.to(e.target, {
+          opacity: 0,
+        });
+      });
+    });
+  });
+
   return (
     <div
       ref={navContainerRef}
-      className="fixed inset-x-2 z-[1000] h-14 transition-all duration-700 border-none rounded-full top-2 sm:top-4 sm:inset-x-6 bg-violet-300"
+      className="fixed inset-x-2 z-[1000] h-14 transition-all duration-700 border-none rounded-full top-2 sm:top-4 sm:inset-x-6 bg-yellow-500"
     >
       <header className="absolute w-full -translate-y-1/2 top-1/2">
         <nav className="flex items-center justify-between p-4 size-full">
@@ -70,11 +127,25 @@ const NavBar = () => {
           <div className="flex items-center h-full">
             <div className="hidden md:flex relative ">
               {navLinks.middle.map((item) => (
-                <div key={item.id} className="nav-hover-btn relative ">
-                  <Link href={`${item.path}`}>{item.title}</Link>
-                  <div className="absolute top-[100%] right-0 w-10 h-1 rounded-full bg-violet-400">
-                    hello
-                  </div>
+                <div key={item.id} className="  nav-hover-btn relative">
+                  <Link className="navLink" href={`${item.path}`}>
+                    {item.title}
+                  </Link>
+
+                  {item.dialog && (
+                    <div className="navDailog absolute top-[100%] bg-yellow-400 text-black rounded-[0.2rem] px-2 opacity-0">
+                      {item.dialog.map((el) => (
+                        <div
+                          key={el.id}
+                          className=" py-1 pr-4 border-b-[1px] border-b-slate-400"
+                        >
+                          <Link href={el.path} className="w-fit">
+                            {el.title}
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

@@ -27,6 +27,7 @@ const navLinks = {
       id: 2,
       title: "Events",
       path: "/events",
+      dialog:[{id:1,title:"Register",path:"/"},{id:2,title:"Schedule",path:"/"},{id:3,title:"Gallery",path:"/"}]
     },
     {
       id: 3,
@@ -37,7 +38,7 @@ const navLinks = {
       id: 4,
       title: "Team",
       path: "/team",
-    },
+    }
   ],
 
   right: [],

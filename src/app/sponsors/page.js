@@ -1,5 +1,5 @@
 const SponsorsPage = () => {
-  return <div>AboutUsPage</div>;
+  return <div>SponsorsPage</div>;
 };
 
 export default SponsorsPage;

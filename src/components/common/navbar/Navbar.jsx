@@ -9,6 +9,7 @@ import { TiLocationArrow } from "react-icons/ti";
 import ButtonOne from "@/components/utils/buttons/ButtonOne";
 
 import navLinks from "@/data/navbar";
+import Link from "next/link";
 
 const NavBar = () => {
   // Refs for navigation container
@@ -53,7 +54,9 @@ const NavBar = () => {
         <nav className="flex items-center justify-between p-4 size-full">
           {/* Logo and Product button */}
           <div className="flex items-center gap-7">
-            <img src="/img/amity_logo.png" alt="logo" className="w-6" />
+            <Link href="/">
+              <img src="/img/amity_logo.png" alt="logo" className="w-6" />
+            </Link>
 
             {/* <ButtonOne
               id="product-button"
@@ -65,15 +68,14 @@ const NavBar = () => {
 
           {/* Navigation Links and Audio Button */}
           <div className="flex items-center h-full">
-            <div className="hidden md:block">
-              {navLinks.middle.map((item, index) => (
-                <a
-                  key={item.id}
-                  href={`#${item.title.toLowerCase()}`}
-                  className="nav-hover-btn"
-                >
-                  {item.title}
-                </a>
+            <div className="hidden md:flex relative ">
+              {navLinks.middle.map((item) => (
+                <div key={item.id} className="nav-hover-btn relative ">
+                  <Link href={`${item.path}`}>{item.title}</Link>
+                  <div className="absolute top-[100%] right-0 w-10 h-1 rounded-full bg-violet-400">
+                    hello
+                  </div>
+                </div>
               ))}
             </div>
           </div>

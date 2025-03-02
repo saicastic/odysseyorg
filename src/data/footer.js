@@ -23,3 +23,5 @@ const footerLinks = [
     ],
   },
 ];
+
+export default footerLinks;

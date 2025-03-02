@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+main{
+  padding-bottom: 35rem !important;
+}
+
 img,
 svg {
   width: 100%;

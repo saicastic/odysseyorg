@@ -1,5 +1,11 @@
+import SponsorsHero from "@/components/sections/sponsorssections/SponsorsHero";
+
 const SponsorsPage = () => {
-  return <div>SponsorsPage</div>;
+  return (
+    <>
+      <SponsorsHero />
+    </>
+  );
 };
 
 export default SponsorsPage;

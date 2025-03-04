@@ -1,5 +1,11 @@
+import GalleryHero from "@/components/sections/gallerysections/GalleryHero";
+
 const GalleryPage = () => {
-  return <div>EventsPage</div>;
+  return (
+    <>
+      <GalleryHero />
+    </>
+  );
 };
 
 export default GalleryPage;

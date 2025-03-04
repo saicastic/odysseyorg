@@ -48,7 +48,7 @@ const ReachUsMap = () => {
   }, []);
 
   return (
-    <section className="bg-purple-400 p-4 h-fit pt-[5rem]">
+    <section className="p-4 h-fit pt-[5rem]">
       <div
         ref={mapRef}
         style={{ width: "100%", height: "400px" }}

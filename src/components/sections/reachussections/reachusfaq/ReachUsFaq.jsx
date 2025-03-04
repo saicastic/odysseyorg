@@ -8,7 +8,9 @@ import {
 
 const ReachUsFaq = () => {
   return (
-    <section className="text-blue-200 p-4 h-fit">
+    <section className="text-white p-4 h-fit flex flex-col md:flex-row">
+      <div className=" md:flex justify-center items-center text-3xl md:flex-1 "><h1>FAQS</h1></div>
+      <div className="md:flex-1">
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
           <AccordionTrigger>Is it accessible?</AccordionTrigger>
@@ -17,6 +19,7 @@ const ReachUsFaq = () => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+      </div>
     </section>
   );
 };

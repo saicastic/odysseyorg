@@ -13,7 +13,7 @@ const Footer = () => {
     <footer className=" absolute h-[30rem] w-full bottom-0 p-2">
       <div className="bg-yellow-400 w-full h-full rounded-md flex flex-col  p-2 relative overflow-hidden">
         <div className="footerchakra hidden  w-80 aspect-[1/1] top-[50%] translate-y-[-50%] left-0 translate-x-[-50%] md:block absolute ">
-          <Image src="/img/chakratwo.png" fill={true} alt="chakrafooter"/>
+          <Image src="/img/chakratwo.png" fill={true} alt="chakrafooter" />
         </div>
         {/* heading  */}
         <div className="text-center">
@@ -47,7 +47,9 @@ const Footer = () => {
               <div className="text-xs flex flex-col gap-2">
                 <div>
                   <div>
-                    <h1 className="font-bold">Event Coordinators, Odyssey 2025</h1>
+                    <h1 className="font-bold">
+                      Event Coordinators, Odyssey 2025
+                    </h1>
                   </div>
                   <div>
                     <p>Dr. Parul Mishra [ASL] - +91 9116997632</p>
@@ -67,7 +69,9 @@ const Footer = () => {
             </div>
 
             <div className="w-full  flex flex-col gap-1">
-              <div><h1>Queries</h1></div>
+              <div>
+                <h1>Queries</h1>
+              </div>
               <div className="flex flex-col gap-1 text-xs">
                 <div>
                   <p>For Queries, Email us at - support.odyssey@gmail.com</p>
@@ -85,14 +89,22 @@ const Footer = () => {
                 <h1>Connect with us</h1>
               </div>
               <div className="flex justify-center w-full gap-3">
-                <div className="w-[1.5rem] aspect-[1/1]"><PiInstagramLogoBold/></div>
-                <div className="w-[1.5rem] aspect-[1/1]"><IoLogoFacebook /></div>
-                <div className="w-[1.5rem] aspect-[1/1]"><PiXLogoFill /></div>
-                <div className="w-[1.5rem] aspect-[1/1]"><RxLinkedinLogo /></div>
-                <div className="w-[1.5rem] aspect-[1/1]"><FaYoutube /></div>
-              
+                <div className="w-[1.5rem] aspect-[1/1]">
+                  <PiInstagramLogoBold />
+                </div>
+                <div className="w-[1.5rem] aspect-[1/1]">
+                  <IoLogoFacebook />
+                </div>
+                <div className="w-[1.5rem] aspect-[1/1]">
+                  <PiXLogoFill />
+                </div>
+                <div className="w-[1.5rem] aspect-[1/1]">
+                  <RxLinkedinLogo />
+                </div>
+                <div className="w-[1.5rem] aspect-[1/1]">
+                  <FaYoutube />
+                </div>
               </div>
-
             </div>
           </div>
 

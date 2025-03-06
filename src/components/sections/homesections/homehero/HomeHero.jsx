@@ -8,7 +8,8 @@ import { ScrollTrigger } from "gsap/all";
 import SplashCursor from "@/components/utils/splashcursor/SplashCursor";
 import Image from "next/image";
 import "./homehero.css";
-
+import CountUp from "@/components/utils/countup/CountUp";
+import homeCounter from "@/data/homecounter";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -95,7 +96,35 @@ const HomeHero = () => {
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
           ODYSS<b>E</b>Y
         </h1>
-        <div className="homePageChakra absolute w-[70%] object-cover aspect-[1/1] left-[50%] translate-x-[-50%] bottom-0 translate-y-[50%] opacity-[0.5]"> 
+        <div className="flex absolute top-[50%] z-[1]  left-[50%] translate-x-[-50%] translate-y-[-50%]">
+          <div className="flex  md:gap-[5rem]">
+            {homeCounter.map((el) => (
+              <div
+                key={el.id}
+                className="w-[8rem] overflow-hidden border-[1px] border-white text-center rounded-md aspect-[1/1] flex flex-col items-center py-[2rem] justify-between  bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-500"
+              >
+                <div>
+                  <p className="text-black text-lg  font-bold">
+                    {" "}
+                    <CountUp
+                      from={0}
+                      to={el.number}
+                      separator=","
+                      direction="up"
+                      duration={3}
+                      className="count-up-text"
+                    />{" "}
+                    +
+                  </p>
+                </div>
+                <div>
+                  <p>{el.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="homePageChakra absolute w-[70%] object-cover aspect-[1/1] left-[50%] translate-x-[-50%] bottom-0 translate-y-[50%] opacity-[0.5]">
           <Image src="/img/23.png" fill={true} alt="rangoli" />
         </div>
       </div>

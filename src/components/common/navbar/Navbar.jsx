@@ -12,6 +12,7 @@ import navLinks from "@/data/navbar";
 import Link from "next/link";
 import "./navbar.css";
 import { useGSAP } from "@gsap/react";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP);
 
@@ -110,9 +111,15 @@ const NavBar = () => {
       <header className="absolute w-full -translate-y-1/2 top-1/2">
         <nav className="flex items-center justify-between p-4 size-full">
           {/* Logo and Product button */}
-          <div className="flex items-center gap-7">
-            <Link href="/">
-              <img src="/img/amity_logo.png" alt="logo" className="w-6" />
+          <div className="flex items-center gap-7 h-full w-[7.5rem]">
+            <Link href="/" className="h-full w-full">
+              <Image
+                src="/img/headerlogo.svg"
+                alt="logo"
+                className="w-[100%]"
+                width={400}
+                height={400}
+              />
             </Link>
 
             {/* <ButtonOne
@@ -124,40 +131,45 @@ const NavBar = () => {
           </div>
 
           {/* Navigation Links and Audio Button */}
-          <div className="flex items-center h-full">
-            <div className="hidden md:flex relative ">
-              {navLinks.middle.map((item) => (
-                <div key={item.id} className="  nav-hover-btn relative">
-                  <Link className="navLink" href={`${item.path}`}>
-                    {item.title}
-                  </Link>
+          <div className="flex items-center gap-[2.5rem]">
+            <div className="flex items-center h-full">
+              <div className="hidden md:flex relative ">
+                {navLinks.middle.map((item) => (
+                  <div key={item.id} className="  nav-hover-btn relative">
+                    <Link
+                      className="navLink text-black font-bold text-base"
+                      href={`${item.path}`}
+                    >
+                      {item.title}
+                    </Link>
 
-                  {item.dialog && (
-                    <div className="navDailog absolute top-[100%] bg-yellow-400 text-black rounded-[0.2rem] px-2 opacity-0">
-                      {item.dialog.map((el) => (
-                        <div
-                          key={el.id}
-                          className=" py-1 pr-4 border-b-[1px] border-b-slate-400"
-                        >
-                          <Link href={el.path} className="w-fit">
-                            {el.title}
-                          </Link>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+                    {item.dialog && (
+                      <div className="navDailog absolute top-[100%] bg-yellow-400 text-black rounded-[0.2rem] px-2 opacity-0">
+                        {item.dialog.map((el) => (
+                          <div
+                            key={el.id}
+                            className=" py-1 pr-4 border-b-[1px] border-b-slate-400"
+                          >
+                            <Link href={el.path} className="w-fit">
+                              {el.title}
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-center gap-7">
-            <ButtonOne
-              id="product-button"
-              title="Reach Us"
-              rightIcon={<TiLocationArrow />}
-              containerClass="!bg-blue-50 md:flex hidden h-[50%] items-center justify-center gap-3"
-            />
+            <div className="flex items-center gap-7">
+              <ButtonOne
+                id="product-button"
+                title="Reach Us"
+                rightIcon={<TiLocationArrow />}
+                containerClass="!bg-black text-white text-base font-bold md:flex hidden h-[50%] items-center justify-center gap-3"
+              />
+            </div>
           </div>
         </nav>
       </header>

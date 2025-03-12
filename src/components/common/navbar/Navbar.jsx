@@ -5,8 +5,19 @@ import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import ButtonOne from "@/components/utils/buttons/ButtonOne";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/utils/sheet/Sheet";
 
 import navLinks from "@/data/navbar";
 import Link from "next/link";
@@ -131,7 +142,7 @@ const NavBar = () => {
           </div>
 
           {/* Navigation Links and Audio Button */}
-          <div className="flex items-center gap-[2.5rem]">
+          <div className="hidden md:flex items-center gap-[2.5rem]">
             <div className="flex items-center h-full">
               <div className="hidden md:flex relative ">
                 {navLinks.middle.map((item) => (
@@ -170,6 +181,29 @@ const NavBar = () => {
                 containerClass="!bg-black text-white text-base font-bold md:flex hidden h-[50%] items-center justify-center gap-3"
               />
             </div>
+          </div>
+          <div className="flex md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <GiHamburgerMenu />
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle>Edit profile</SheetTitle>
+                  <SheetDescription>
+                    Make changes to your profile here. Click save when you're
+                    done.
+                  </SheetDescription>
+                </SheetHeader>
+                <div className="grid gap-4 py-4">
+                  <div className="grid grid-cols-4 items-center gap-4"></div>
+                  <div className="grid grid-cols-4 items-center gap-4"></div>
+                </div>
+                <SheetFooter>
+                  <SheetClose asChild>Helll</SheetClose>
+                </SheetFooter>
+              </SheetContent>
+            </Sheet>
           </div>
         </nav>
       </header>

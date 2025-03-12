@@ -190,41 +190,51 @@ const NavBar = () => {
               <SheetContent>
                 <SheetHeader>
                   <SheetTitle className="pt-5 pb-3 text-2xl">
-                    <Link href="/">INDEX</Link>
+                    <SheetClose asChild>
+                      <Link href="/">INDEX</Link>
+                    </SheetClose>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="w-full h-[95%] py-10">
                   <div className=" w-full h-full">
                     <nav className="text-xl">
-                      <SheetClose asChild>
-                        <ul className="uppercase tracking-wide font-bold font-circular-web">
-                          {navLinks.middle.map((item) => (
-                            <li key={item.id}>
-                              <div className="text-base">
-                                <Link href={item.path}>{item.title}</Link>
-                              </div>
-                              <div className="pl-10 py-5 flex flex-col gap-2 text-sm text-zinc-900">
-                                {item.dialog &&
-                                  item.dialog.map((el) => (
-                                    <div key={el.id}>
-                                      <Link href="/">{el.title}</Link>
-                                    </div>
-                                  ))}
-                              </div>
-                            </li>
-                          ))}
-                          <li>
+                      <ul className="uppercase tracking-wide font-bold font-circular-web">
+                        {navLinks.middle.map((item) => (
+                          <li key={item.id}>
                             <div className="text-base">
-                              <Link href="/reachus">REACH US</Link>
+                              <SheetClose asChild>
+                                <Link href={item.path}>{item.title}</Link>
+                              </SheetClose>
+                            </div>
+                            <div className="pl-10 py-5 flex flex-col gap-2 text-sm text-zinc-900">
+                              {item.dialog &&
+                                item.dialog.map((el) => (
+                                  <div key={el.id}>
+                                    <SheetClose asChild>
+                                      <Link href="/">{el.title}</Link>
+                                    </SheetClose>
+                                  </div>
+                                ))}
                             </div>
                           </li>
-                        </ul>
-                      </SheetClose>
+                        ))}
+                        <li>
+                          <div className="text-base">
+                            <SheetClose asChild>
+                              <Link href="/reachus">REACH US</Link>
+                            </SheetClose>
+                          </div>
+                        </li>
+                      </ul>
                     </nav>
                   </div>
                 </div>
                 <SheetFooter>
-                  <SheetClose asChild>Close</SheetClose>
+                  <SheetClose asChild>
+                    <button className="px-4 py-2 bg-primary text-white rounded">
+                      Close
+                    </button>
+                  </SheetClose>
                 </SheetFooter>
               </SheetContent>
             </Sheet>

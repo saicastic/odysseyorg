@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-main{
+main {
   padding-bottom: 35rem !important;
 }
 
@@ -82,6 +82,10 @@ section {
 @layer utilities {
   .border-hsla {
     @apply border border-white/20;
+  }
+
+  .grad-yellow {
+    @apply bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-500;
   }
 
   .nav-hover-btn {

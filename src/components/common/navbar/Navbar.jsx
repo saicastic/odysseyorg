@@ -189,18 +189,11 @@ const NavBar = () => {
               </SheetTrigger>
               <SheetContent>
                 <SheetHeader>
-                  <SheetTitle>Edit profile</SheetTitle>
-                  <SheetDescription>
-                    Make changes to your profile here. Click save when you're
-                    done.
-                  </SheetDescription>
+                  <SheetTitle>Index</SheetTitle>
                 </SheetHeader>
-                <div className="grid gap-4 py-4">
-                  <div className="grid grid-cols-4 items-center gap-4"></div>
-                  <div className="grid grid-cols-4 items-center gap-4"></div>
-                </div>
+                <div className="w-full h-full bg-red-500"></div>
                 <SheetFooter>
-                  <SheetClose asChild>Helll</SheetClose>
+                  <SheetClose asChild>Close</SheetClose>
                 </SheetFooter>
               </SheetContent>
             </Sheet>

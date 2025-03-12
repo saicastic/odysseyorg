@@ -194,23 +194,25 @@ const NavBar = () => {
                 <div className="w-full h-[95%] py-10">
                   <div className=" w-full h-full">
                     <nav className="text-xl">
-                      <ul>
-                        {navLinks.middle.map((item) => (
-                          <li key={item.id}>
-                            <div>
-                              <Link href={item.path}>{item.title}</Link>
-                            </div>
-                            <div className="pl-10 py-5 flex flex-col gap-2">
-                              {item.dialog &&
-                                item.dialog.map((el) => (
-                                  <div key={el.id}>
-                                    <Link href="/">{el.title}</Link>
-                                  </div>
-                                ))}
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
+                      <SheetClose asChild>
+                        <ul className="uppercase tracking-wide font-bold font-circular-web">
+                          {navLinks.middle.map((item) => (
+                            <li key={item.id}>
+                              <div className="text-base">
+                                <Link href={item.path}>{item.title}</Link>
+                              </div>
+                              <div className="pl-10 py-5 flex flex-col gap-2 text-sm text-zinc-900">
+                                {item.dialog &&
+                                  item.dialog.map((el) => (
+                                    <div key={el.id}>
+                                      <Link href="/">{el.title}</Link>
+                                    </div>
+                                  ))}
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </SheetClose>
                     </nav>
                   </div>
                 </div>

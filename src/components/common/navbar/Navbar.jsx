@@ -5,8 +5,19 @@ import gsap from "gsap";
 import { useWindowScroll } from "react-use";
 import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import ButtonOne from "@/components/utils/buttons/ButtonOne";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/utils/sheet/Sheet";
 
 import navLinks from "@/data/navbar";
 import Link from "next/link";
@@ -131,7 +142,7 @@ const NavBar = () => {
           </div>
 
           {/* Navigation Links and Audio Button */}
-          <div className="flex items-center gap-[2.5rem]">
+          <div className="hidden md:flex items-center gap-[2.5rem]">
             <div className="flex items-center h-full">
               <div className="hidden md:flex relative ">
                 {navLinks.middle.map((item) => (
@@ -170,6 +181,63 @@ const NavBar = () => {
                 containerClass="!bg-black text-white text-base font-bold md:flex hidden h-[50%] items-center justify-center gap-3"
               />
             </div>
+          </div>
+          <div className="flex md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <GiHamburgerMenu />
+              </SheetTrigger>
+              <SheetContent>
+                <SheetHeader>
+                  <SheetTitle className="pt-5 pb-3 text-2xl">
+                    <SheetClose asChild>
+                      <Link href="/">INDEX</Link>
+                    </SheetClose>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="w-full h-[95%] py-10">
+                  <div className=" w-full h-full">
+                    <nav className="text-xl">
+                      <ul className="uppercase tracking-wide font-bold font-circular-web">
+                        {navLinks.middle.map((item) => (
+                          <li key={item.id}>
+                            <div className="text-base">
+                              <SheetClose asChild>
+                                <Link href={item.path}>{item.title}</Link>
+                              </SheetClose>
+                            </div>
+                            <div className="pl-10 py-5 flex flex-col gap-2 text-sm text-zinc-900">
+                              {item.dialog &&
+                                item.dialog.map((el) => (
+                                  <div key={el.id}>
+                                    <SheetClose asChild>
+                                      <Link href="/">{el.title}</Link>
+                                    </SheetClose>
+                                  </div>
+                                ))}
+                            </div>
+                          </li>
+                        ))}
+                        <li>
+                          <div className="text-base">
+                            <SheetClose asChild>
+                              <Link href="/reachus">REACH US</Link>
+                            </SheetClose>
+                          </div>
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+                <SheetFooter>
+                  <SheetClose asChild>
+                    <button className="px-4 py-2 bg-primary text-white rounded">
+                      Close
+                    </button>
+                  </SheetClose>
+                </SheetFooter>
+              </SheetContent>
+            </Sheet>
           </div>
         </nav>
       </header>

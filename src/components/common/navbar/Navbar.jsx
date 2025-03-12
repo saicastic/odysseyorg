@@ -189,9 +189,31 @@ const NavBar = () => {
               </SheetTrigger>
               <SheetContent>
                 <SheetHeader>
-                  <SheetTitle>Index</SheetTitle>
+                  <SheetTitle className="pt-5 pb-3 text-2xl">INDEX</SheetTitle>
                 </SheetHeader>
-                <div className="w-full h-full bg-red-500"></div>
+                <div className="w-full h-[95%] py-10">
+                  <div className=" w-full h-full">
+                    <nav className="text-xl">
+                      <ul>
+                        {navLinks.middle.map((item) => (
+                          <li key={item.id}>
+                            <div>
+                              <Link href={item.path}>{item.title}</Link>
+                            </div>
+                            <div className="pl-10 py-5 flex flex-col gap-2">
+                              {item.dialog &&
+                                item.dialog.map((el) => (
+                                  <div key={el.id}>
+                                    <Link href="/">{el.title}</Link>
+                                  </div>
+                                ))}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
                 <SheetFooter>
                   <SheetClose asChild>Close</SheetClose>
                 </SheetFooter>

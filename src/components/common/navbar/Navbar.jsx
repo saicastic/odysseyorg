@@ -189,7 +189,9 @@ const NavBar = () => {
               </SheetTrigger>
               <SheetContent>
                 <SheetHeader>
-                  <SheetTitle className="pt-5 pb-3 text-2xl">INDEX</SheetTitle>
+                  <SheetTitle className="pt-5 pb-3 text-2xl">
+                    <Link href="/">INDEX</Link>
+                  </SheetTitle>
                 </SheetHeader>
                 <div className="w-full h-[95%] py-10">
                   <div className=" w-full h-full">
@@ -211,6 +213,11 @@ const NavBar = () => {
                               </div>
                             </li>
                           ))}
+                          <li>
+                            <div className="text-base">
+                              <Link href="/reachus">REACH US</Link>
+                            </div>
+                          </li>
                         </ul>
                       </SheetClose>
                     </nav>

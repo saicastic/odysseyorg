@@ -3,7 +3,6 @@ import ButtonOne from "@/components/utils/buttons/ButtonOne";
 import { useGSAP } from "@gsap/react";
 import { useEffect, useRef, useState } from "react";
 import { TiLocationArrow } from "react-icons/ti";
-import VideoPreview from "./VideoPreview";
 import { ScrollTrigger } from "gsap/all";
 import SplashCursor from "@/components/utils/splashcursor/SplashCursor";
 import Image from "next/image";
@@ -93,19 +92,18 @@ const HomeHero = () => {
         <div className="hidden lg:block">
           <SplashCursor />
         </div>
-        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          ODYSS<b>E</b>Y
+        <h1 className=" flex md:hidden jus special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
+          ODYSSEY
         </h1>
-        <div className="flex absolute top-[50%] z-[1]  left-[50%] translate-x-[-50%] translate-y-[-50%]">
-          <div className="flex  md:gap-[5rem]">
+        <div className="flex absolute top-[50%] z-[1] w-[80%]  left-[50%] translate-x-[-50%] translate-y-[-50%]">
+          <div className="counterWrapper flex  justify-center flex-wrap md:flex-grow w-[100%] md:w-[10%] md:justify-evenly">
             {homeCounter.map((el) => (
               <div
                 key={el.id}
-                className="w-[8rem] overflow-hidden border-[1px] border-white text-center rounded-md aspect-[1/1] flex flex-col items-center py-[2rem] justify-between  bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-500"
+                className=" w-[8rem] md:w-[8rem] overflow-hidden border-[1px] border-white text-center rounded-md aspect-[1/1] flex flex-col items-center  py-[2rem] justify-between  bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-500"
               >
                 <div>
                   <p className="text-black text-lg  font-bold">
-                    {" "}
                     <CountUp
                       from={0}
                       to={el.number}
@@ -113,7 +111,7 @@ const HomeHero = () => {
                       direction="up"
                       duration={3}
                       className="count-up-text"
-                    />{" "}
+                    />
                     +
                   </p>
                 </div>
@@ -129,8 +127,8 @@ const HomeHero = () => {
         </div>
       </div>
 
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        ODYSS<b>E</b>Y
+      <h1 className="special-font flex md:hidden hero-heading absolute bottom-5 right-5 text-black">
+        ODYSSEY
       </h1>
     </div>
   );

@@ -33,7 +33,7 @@ const HomeAbout = () => {
         </p>
 
         <AnimatedTitle
-          title="Ab<b>o</b>ut Us"
+          title="About Us"
           containerClass="mt-5 !text-black text-center"
         />
 

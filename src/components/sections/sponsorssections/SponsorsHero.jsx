@@ -10,18 +10,30 @@ const SponsorsHero = () => {
       <div className="text-center">
         <h1 className="uppercase text-white text-4xl font-bold">sponsors</h1>
       </div>
-      <div className="w-full flex flex-col gap-8 pt-5">
+      <div className="w-full flex flex-col md:flex-row md:justify-evenly md:flex-wrap gap-8 pt-5">
         {sponsors.map((sponsor) => (
           <div
             key={sponsor.id}
-            className="flex justify-center flex-col items-center gap-2"
+            className="flex justify-center flex-col  items-center gap-2 px-10"
           >
             <div>
-              <h1>{sponsor.sec_name}</h1>
+              <h1 className="font-bold uppercase tracking-wide">
+                {sponsor.sec_name}
+              </h1>
             </div>
-            <div className="flex gap-3 ">
-              {sponsor.images.map((image) => (
-                <Image src={image} alt="sponsor" height={400} width={400} />
+            <div
+              className={`flex flex-col  gap-3 ${
+                sponsor.sec_name == "Techno Partner" ? `bg-white p-4` : ``
+              }`}
+            >
+              {sponsor.images.map((image, index) => (
+                <Image
+                  key={index}
+                  src={image}
+                  alt="sponsor"
+                  height={400}
+                  width={400}
+                />
               ))}
             </div>
           </div>

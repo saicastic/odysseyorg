@@ -1,5 +1,11 @@
+import TeamHero from "@/components/sections/teamsections/teamhero/TeamHero";
+
 const TeamPage = () => {
-  return <div>Team Page</div>;
+  return (
+    <>
+      <TeamHero />
+    </>
+  );
 };
 
 export default TeamPage;

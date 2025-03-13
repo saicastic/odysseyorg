@@ -1,4 +1,4 @@
-export default sponsors = [
+const sponsors = [
   { id: 1, sec_name: "Art Partner", images: ["/img/tatoo.png"] },
   { id: 2, sec_name: "Education Partner", images: ["/img/careershapers.png"] },
   {
@@ -32,3 +32,5 @@ export default sponsors = [
   { id: 11, sec_name: "Title Sponsor", images: ["/img/shubhcity.png"] },
   { id: 12, sec_name: "Banking Partner", images: ["/img/icici.png"] },
 ];
+
+export default sponsors;

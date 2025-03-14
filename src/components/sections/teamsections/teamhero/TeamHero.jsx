@@ -1,4 +1,5 @@
 import team from "@/data/team";
+import { LinkedinIcon } from "lucide-react";
 import Image from "next/image";
 import React, { memo } from "react";
 
@@ -23,7 +24,7 @@ const TeamHero = () => {
               {teamsec.member.map((member) => (
                 <div
                   key={member.id}
-                  className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-2 md:p-6"
+                  className="grad-yellow rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-2 md:p-6"
                 >
                   {/* Image Container */}
                   <div className="w-full aspect-square rounded-lg overflow-hidden mx-auto mb-4">
@@ -43,6 +44,16 @@ const TeamHero = () => {
                     <p className="text-sm md:text-base text-gray-600 mb-2">
                       CEO & Founder
                     </p>
+                  </div>
+                  <div className="flex justify-center space-x-3 mt-4">
+                    <a
+                      href="#"
+                      className="text-blue-600 hover:text-blue-800"
+                    ></a>
+                    <a
+                      href="#"
+                      className="text-gray-600 hover:text-gray-800"
+                    ></a>
                   </div>
                 </div>
               ))}

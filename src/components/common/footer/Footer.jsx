@@ -13,7 +13,12 @@ const Footer = () => {
     <footer className=" absolute h-[30rem] w-full bottom-0 p-2">
       <div className="bg-yellow-400 w-full h-full rounded-md flex flex-col  p-2 relative overflow-hidden">
         <div className="footerchakra hidden  w-80 aspect-[1/1] top-[50%] translate-y-[-50%] left-0 translate-x-[-50%] md:block absolute ">
-          <Image src="/img/chakratwo.png" fill={true} alt="chakrafooter" />
+          <Image
+            src="/img/chakratwo.png"
+            width={100}
+            height={100}
+            alt="chakrafooter"
+          />
         </div>
         {/* heading  */}
         <div className="text-center">

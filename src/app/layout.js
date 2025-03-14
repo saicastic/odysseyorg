@@ -12,7 +12,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={` antialiased relative`}>
         <NavBar />
-
         {children}
         <Footer />
       </body>

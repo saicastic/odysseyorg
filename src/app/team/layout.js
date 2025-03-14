@@ -3,7 +3,7 @@ import { ReactLenis } from "lenis/react";
 const TeamLayout = ({ children }) => {
   return (
     <ReactLenis root>
-      <main className="relative min-h-screen w-screen overflow-x-hidden">
+      <main className="relative w-full bg-black  bg-grid-white/[0.2]">
         {children}
       </main>
     </ReactLenis>

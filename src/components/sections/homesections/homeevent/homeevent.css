@@ -82,14 +82,15 @@
   width: 100%;
   padding: 0.3rem;
   height: 100%;
-  clip-path: polygon(
+  border-radius: 10px;
+  /* clip-path: polygon(
     0 0,
     calc(100% - 30px) 0,
     100% 30px,
     100% 100%,
     30px 100%,
     0 calc(100% - 30px)
-  );
+  ); */
   background: rgb(219, 255, 56);
 
   background: linear-gradient(
@@ -120,14 +121,15 @@
   width: 100%;
   height: 100%;
   background-color: rgb(0, 0, 0);
-  clip-path: polygon(
+  /* clip-path: polygon(
     0 0,
     calc(100% - 30px) 0,
     100% 30px,
     100% 100%,
     30px 100%,
     0 calc(100% - 30px)
-  );
+  ); */
+  border-radius: 10px;
 
   --dot-bg: rgb(0, 0, 0);
   --dot-color: white;
@@ -162,29 +164,32 @@
 
 .flipCardBack {
   padding: 0.2rem;
-  background-color: #fff;
+  background-color: black;
   transform: rotateY(180deg);
-  clip-path: polygon(
+  border-radius: 10px;
+  /* clip-path: polygon(
     0 0,
     calc(100% - 30px) 0,
     100% 30px,
     100% 100%,
     30px 100%,
     0 calc(100% - 30px)
-  );
+  ); */
 }
 
 .flipCardBackInner {
   width: 100%;
   height: 100%;
-  clip-path: polygon(
+
+  /* clip-path: polygon(
     0 0,
     calc(100% - 30px) 0,
     100% 30px,
     100% 100%,
     30px 100%,
     0 calc(100% - 30px)
-  );
+  ); */
+
   background-color: black;
 }
 
